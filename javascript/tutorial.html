@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 3px 5px;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+        }
+        .example {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #ddd;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #output {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+        #special-element{
+            color: red;
+            font-size: 20pt;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="special-element">
+        <p>This is special element</p>
+    </div>
+    <h1>JavaScript Basics Tutorial</h1>
+    <p>Welcome to this interactive JavaScript tutorial for beginners. Follow along and try out the examples!</p>
+
+    <h2>1. Variables</h2>
+    <p>JavaScript allows you to declare variables using <code>let</code>, <code>const</code>, or <code>var</code>.</p>
+    <div class="example">
+        <pre><code>let name = "John";
+console.log(name);</code></pre>
+        <button onclick="runVariablesExample()">Run Example</button>
+        <div id="variables-output" class="output"></div>
+    </div>
+
+    <h2>2. Functions</h2>
+    <p>Functions allow you to reuse code. Here's an example of a function that adds two numbers:</p>
+    <div class="example">
+        <pre><code>function add(a, b) {
+    return a + b;
+}
+console.log(add(3, 5));</code></pre>
+        <button onclick="runFunctionsExample()">Run Example</button>
+        <div id="functions-output" class="output"></div>
+    </div>
+
+    <h2>3. Conditional Statements</h2>
+    <p>Conditional statements let you control the flow of your program based on conditions.</p>
+    <div class="example">
+        <pre><code>let age = 18;
+
+if (age >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a minor.");
+}</code></pre>
+        <button onclick="runConditionalsExample()">Run Example</button>
+        <div id="conditionals-output" class="output"></div>
+    </div>
+
+    <h2>4. Loops</h2>
+    <p>Loops allow you to repeat code. Here's an example of a <code>for</code> loop:</p>
+    <div class="example">
+        <pre><code>for (let i = 0; i < 5; i++) {
+    console.log(i);
+}</code></pre>
+        <button onclick="runLoopsExample()">Run Example</button>
+        <div id="loops-output" class="output"></div>
+    </div>
+
+    <h2>5. DOM Manipulation</h2>
+    <p>With JavaScript, you can interact with and modify the HTML structure of a webpage. Here's an example:</p>
+    <div class="example">
+        <pre><code>// Change the text of the heading
+document.querySelector("h1").textContent = "JavaScript is Awesome!";</code></pre>
+        <button onclick="runDOMExample()">Run Example</button>
+        <div id="dom-output" class="output"></div>
+    </div>
+
+    <h2>6. Events</h2>
+    <p>You can respond to user interactions using event listeners. For example:</p>
+    <div class="example">
+        <pre><code>// Add a click event to a button
+document.querySelector("button").addEventListener("click", () => {
+    console.log("Button clicked!");
+});</code></pre>
+        <button onclick="runEventsExample()">Run Example</button>
+        <div id="events-output" class="output"></div>
+    </div>
+
+    <script>
+        function runVariablesExample() {
+            let name = "John";
+            document.getElementById("variables-output").textContent = `Output: ${name}`;
+        }
+
+        function runFunctionsExample() {
+            function add(a, b) {
+                return a + b;
+            }
+            const result = add(3, 5);
+            document.getElementById("functions-output").textContent = `Output: ${result}`;
+        }
+
+        function runConditionalsExample() {
+            let age = 18;
+            let message;
+            if (age >= 18) {
+                message = "You are an adult.";
+            } else {
+                message = "You are a minor.";
+            }
+            document.getElementById("conditionals-output").textContent = `Output: ${message}`;
+        }
+
+        function runLoopsExample() {
+            let output = "";
+            for (let i = 0; i < 5; i++) {
+                output += i + " ";
+            }
+            document.getElementById("loops-output").textContent = `Output: ${output.trim()}`;
+        }
+
+        function runDOMExample() {
+            document.querySelector("h1").textContent = "JavaScript is Awesome!";
+            document.getElementById("dom-output").textContent = "Check the heading above!";
+        }
+
+        function runEventsExample() {
+            document.getElementById("events-output").textContent = "Check the console for output (F12 > Console).";
+            console.log("Button clicked!");
+        }
+    </script>
+</body>
+</html>

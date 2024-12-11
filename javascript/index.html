@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style type="text/css">
+        .mb-5{
+            margin-bottom: 5px;
+        }
+        .card{
+            width: 50%;
+            margin: 0 auto;
+            border: 1px solid #c1c1c1;
+            border-radius: 10px;
+            padding: 20px;
+            background: #cdcdcda6;
+        }
+
+        .form-group{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" class="card">
+        <h1>Contact Form</h1>
+        <div class="mb-5 form-group">
+            <label for="firstname">Enter First Name</label>
+            <input type="text" name="firstname" id="firstname" value="Jon">
+        </div>
+        <div class="mb-5 form-group">
+            <label for="middlename">Enter Middle Name</label>
+            <input type="text" name="middlename" id="middlename">
+        </div>
+        <div class="mb-5 form-group">
+            <label for="lastname">Enter Last Name</label>
+            <input type="text" name="lastname" id="lastname" value="Snow">
+        </div>
+        <div class="mb-5 form-group">
+            <label for="age">Enter Age</label>
+            <input type="number" name="age" id="age">
+        </div>
+        <div class="mb-5 form-group">
+            <label for="address">Address</label>
+            <textarea rows="5" name="address" id="address"></textarea>
+        </div>
+        <button type="button" id="content-changer">Change content</button>
+        <button type="button" onclick="hideAddress()">Hide Address</button>
+        <button type="button" onclick="showAddress()">Show Address</button>
+    </form>
+    <p id="content"></p>
+
+    <script type="text/javaScript">
+
+        document.getElementById("content-changer").addEventListener("click", () => {
+            changeContent();
+        });
+        
+        let content = document.getElementById("content");
+        let firstname = document.getElementById("firstname");
+        let lastname = document.getElementById("lastname");
+        let age = document.getElementById("age");
+        let address = document.getElementById("address");
+        // let name = "George";
+        // let age = 21;
+        // let address = "Bacolod";
+
+        function hideAddress() {
+            address.style.display = "none";
+            // let address = document.getElementById("address").value;
+        }
+        
+        function showAddress() {
+            address.style.display = "block";
+            // let address = document.getElementById("address").value;
+        }
+
+
+        function changeContent(){
+            // document.getElementByTagName("p");
+            // console.log(content);
+
+            content.innerHTML = `Hello, I am ${firstname.value} ${lastname.value}. I am ${age.value} years old. I live in ${address.value}.`;
+        }
+
+
+
+
+        // console.log(name);
+        // console.log(age);
+        // console.log(address);
+
+        function add(a,b){
+            return a + b;
+        }
+
+        function checkAge(age){
+            if (age >= 18) {
+                console.log("You are an adult.");
+            } else {
+                console.log("You are a minor.");
+            }
+        }
+
+        function loopText(until) {
+            for (let i = 0; i < until; i++) {
+                console.log("I love you. " + i);
+            }
+        }
+    </script>
+</body>
+
+</html>
